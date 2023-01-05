@@ -1,6 +1,5 @@
 
-from django.contrib import admin
-from django.urls import include, path
+from django.urls import path
 
 from mainapp import views
 from mainapp.apps import MainappConfig

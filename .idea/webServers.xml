@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="bbf26875-334d-42c3-ac1f-d05e880dd8a9" name="mate">
+        <fileTransfer rootFolder="/home/vlad/Рабочий стол/djangoBasics/djangoStart" accessType="SFTP" host="192.168.0.111" port="22" sshConfigId="8c633c8d-fc7c-488e-8b7a-7638f5d086c1" sshConfig="vlad@192.168.0.111:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

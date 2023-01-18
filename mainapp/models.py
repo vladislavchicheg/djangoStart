@@ -17,9 +17,11 @@ class News(models.Model):
         self.deleted = True
         self.save()
 
+
 class CoursesManager(models.Manager):
     def get_queryset(self):
         return super().get_queryset().filter(deleted=False)
+
 
 class Courses(models.Model):
     objects = CoursesManager()

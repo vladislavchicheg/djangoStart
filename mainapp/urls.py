@@ -32,7 +32,7 @@ urlpatterns = [
     ),
     path(
         "courses/<int:pk>/",
-        views.CoursesDetailView.as_view(),
+        cache_page(60 * 5)(views.CoursesDetailView.as_view()),
         name="courses_detail",
     ),
     path(

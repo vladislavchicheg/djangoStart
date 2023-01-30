@@ -2,9 +2,15 @@ import pickle
 from http import HTTPStatus
 from unittest import mock
 
+from django.conf import settings
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from django.core import mail as django_mail
 from django.test import Client, TestCase
 from django.urls import reverse
+from selenium.webdriver.common.by import By
+from selenium.webdriver.firefox.webdriver import WebDriver
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 
 from authapp import models as authapp_models
 from mainapp import models as mainapp_models
@@ -128,14 +134,6 @@ class TestTaskMailSend(TestCase):
         user_obj = authapp_models.CustomUser.objects.first()
         mainapp_tasks.send_feedback_mail({"user_id": user_obj.id, "message": message_text})
         self.assertEqual(django_mail.outbox[0].body, message_text)
-
-
-from django.conf import settings
-from django.contrib.staticfiles.testing import StaticLiveServerTestCase
-from selenium.webdriver.common.by import By
-from selenium.webdriver.firefox.webdriver import WebDriver
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
 
 
 class TestNewsSelenium(StaticLiveServerTestCase):
